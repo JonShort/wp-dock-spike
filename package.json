@@ -1,0 +1,21 @@
+{
+  "name": "wp-dock-spike",
+  "version": "0.1.0",
+  "description": "Spike to check out docker functionality with wordpress",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JonShort/wp-dock-spike"
+  },
+  "devDependencies": {
+    "glob": "^7.1.1",
+    "rimraf": "^2.6.1"
+  },
+  "dependencies": {},
+  "scripts": {
+    "start": "docker-compose up || true",
+    "import": "docker exec $(docker ps -lq) /bin/bash -c 'wp db import /data/database.sql --allow-root'",
+    "dump": "docker exec $(docker ps -lq) /bin/bash -c 'wp db export /data/database_bk.sql --allow-root'",
+    "prune-themes": "node config/pruneThemes.js"
+  }
+}
