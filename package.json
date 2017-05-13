@@ -13,7 +13,7 @@
   },
   "dependencies": {},
   "scripts": {
-    "start": "docker-compose up",
+    "start": "docker-compose up || true",
     "import": "docker exec $(docker ps -lq) /bin/bash -c 'wp db import /data/database.sql --allow-root'",
     "dump": "docker exec $(docker ps -lq) /bin/bash -c 'wp db export /data/database_bk.sql --allow-root'",
     "prune-themes": "node config/pruneThemes.js"

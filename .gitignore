@@ -19,6 +19,7 @@ wp-content/plugins/hello.php
 /.vscode
 
 data/
+uploads/
 themes/*/*
 themes/index.php
 !/themes/right-theme/*
