@@ -1,32 +1,36 @@
-version: '2'
+version: '3'
 
 services:
   db:
     image: mysql:5.7
     volumes:
-      - ./data:/var/lib/mysql
-    ports:
-      - 8081:3306
-    restart: always
+      - data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_ROOT_PASSWORD: wordpress
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
-
   wordpress:
     depends_on:
       - db
     image: wordpress:latest
     ports:
-      - 8080:80
+      - "8000:80"
     volumes:
-      - ./themes:/var/www/html/wp-content/themes
-      - ./uploads:/var/www/html/wp-content/uploads
+      - ./app/data:/data
+      - ./app/themes:/var/www/html/wp-content/themes
+      - ./app/uploads:/var/www/html/wp-content/uploads
     restart: always
     environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
+      DB_HOST: db:3306
+      DB_NAME: wordpress
+      DB_PASS: wordpress
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+    ports:
+      - 22222:80
+
 volumes:
   data:

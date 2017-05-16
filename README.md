@@ -8,7 +8,7 @@ Spike to check out docker functionality with wordpress
 - `cd /wp-dock-spike`
 - Run `npm install`
 - Run `npm run start`
-- Wordpress should now be running at port 8080 usually accessed via [localhost](http://localhost:8080/) 
+- Wordpress should now be running at port 8000 usually accessed via [localhost](http://localhost:8000/) 
 
 ## Notes
-This repo is mainly to get to grips with docker and wordpress within git. I followed [this guide](https://docs.docker.com/compose/wordpress/) to bootstrap the repo, with some tweaks to pull down the content locally.
+This repo is mainly to get to grips with docker and wordpress within git. I followed [this guide](https://docs.docker.com/compose/wordpress/) to bootstrap the repo, with some tweaks.

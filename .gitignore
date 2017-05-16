@@ -20,6 +20,6 @@ wp-content/plugins/hello.php
 
 data/
 uploads/
-themes/*/*
-themes/index.php
-!/themes/right-theme/*
+app/themes/*/*
+app/themes/index.php
+!/app/themes/right-theme/*

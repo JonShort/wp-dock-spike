@@ -1,4 +1,6 @@
 <?php
+wp_enqueue_style( 'slider', get_template_directory_uri() . '/style.css',false,'1.1','all');
+
 if ( ! function_exists( 'blank_setup' ) ) :
 	function blank_setup() {
 		load_theme_textdomain( 'intentionally-blank' );

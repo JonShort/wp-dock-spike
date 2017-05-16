@@ -9,17 +9,17 @@
   },
   "devDependencies": {
     "glob": "^7.1.1",
+    "node-sass": "^4.5.3",
     "rimraf": "^2.6.1"
   },
   "dependencies": {},
   "scripts": {
     "start": "docker-compose up || true",
     "remove": "docker-compose down --volumes",
+    "css": "node-sass --include-path scss dev/main.scss app/themes/right-theme/style.css --output-style compressed && node-sass --include-path scss dev/main.scss app/themes/right-theme/style.css -w --output-style compressed",
     "clean": "docker container prune",
-    "delete": "npm run remove && docker container prune && docker image rm -f wordpress mysql:5.7",
-    "import": "docker exec $(docker ps -lq) /bin/bash -c 'wp db import /data/database.sql --allow-root'",
-    "dump": "docker exec $(docker ps -lq) /bin/bash -c 'wp db export /data/database_bk.sql --allow-root'",
-    "prune-themes": "node config/pruneThemes.js",
-    "prune-data": "rimraf data"
+    "build": "docker build -t wp-built .",
+    "delete": "npm run remove && docker container prune && docker image rm -f wp-built wordpress mysql:5.7",
+    "prune-themes": "node config/pruneThemes.js"
   }
 }
