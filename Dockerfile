@@ -2,7 +2,7 @@
 FROM wordpress:latest
 
 # Allow sudo commands within container
-RUN apt-get update && apt-get -y install sudo
+RUN apt-get update && apt-get -y install sudo less
 
 # Install wp-cli within container, move it to allow for "wp" command to be used
 RUN curl -o /bin/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar

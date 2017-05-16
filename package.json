@@ -18,9 +18,6 @@
     "clean": "docker container prune",
     "build": "docker build -t wp-built .",
     "delete": "npm run remove && docker container prune && docker image rm -f wp-built wordpress mysql:5.7",
-    "import": "docker exec $(docker ps -lq) /bin/bash -c 'wp db import /data/database.sql --allow-root'",
-    "dump": "docker exec $(docker ps -lq) /bin/bash -c 'wp db export /data/database_bk.sql --allow-root'",
-    "prune-themes": "node config/pruneThemes.js",
-    "prune-data": "rimraf data"
+    "prune-themes": "node config/pruneThemes.js"
   }
 }
