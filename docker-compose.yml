@@ -17,9 +17,9 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./data:/data
-      - ./themes:/var/www/html/wp-content/themes
-      - ./uploads:/var/www/html/wp-content/uploads
+      - ./app/data:/data
+      - ./app/themes:/var/www/html/wp-content/themes
+      - ./app/uploads:/var/www/html/wp-content/uploads
     restart: always
     environment:
       DB_HOST: db:3306
