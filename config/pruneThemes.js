@@ -1,7 +1,7 @@
 var glob = require("glob");
 var rimraf = require("rimraf");
 
-glob("themes/!(right-theme)", function(er, files) {
+glob("app/themes/!(right-theme)", function(er, files) {
   var int = files.length;
 
   if (er !== null) {

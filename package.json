@@ -16,10 +16,10 @@
   "scripts": {
     "start": "docker-compose up || true",
     "remove": "docker-compose down --volumes",
-    "css": "node-sass --include-path scss dev/main.scss app/themes/right-theme/style.css --output-style compressed && node-sass --include-path scss dev/main.scss app/themes/right-theme/style.css -w --output-style compressed",
+    "css": "node-sass --include-path scss dev/sass/main.scss dev/themes/right-theme/style.css --output-style compressed && node-sass --include-path scss dev/sass/main.scss dev/themes/right-theme/style.css -w --output-style compressed",
     "clean": "docker container prune",
     "build": "docker build -t wp-built .",
-    "delete": "npm run remove && docker container prune && docker image rm -f wp-built wordpress mysql:5.7",
+    "delete": "npm run remove && docker container prune && docker image rm -f wordpress mysql:5.7 phpmyadmin/phpmyadmin",
     "prune-themes": "node config/pruneThemes.js"
   }
 }
