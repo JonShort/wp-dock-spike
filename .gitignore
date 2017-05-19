@@ -18,8 +18,11 @@ wp-content/plugins/hello.php
 /node_modules
 /.vscode
 
-data/
+
+data/*
+!data/.gitkeep
 uploads/
+!uploads/.gitkeep
 app/themes/*/*
 app/themes/index.php
 !/app/themes/right-theme/*

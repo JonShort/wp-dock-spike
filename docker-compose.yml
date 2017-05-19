@@ -18,7 +18,7 @@ services:
       - "8000:80"
     volumes:
       - ./app/data:/data
-      - ./app/themes:/var/www/html/wp-content/themes
+      - ./dev/themes/right-theme:/var/www/html/wp-content/themes/right-theme
       - ./app/uploads:/var/www/html/wp-content/uploads
     restart: always
     environment:
